@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>{if $seo_title}{$seo_title}{else}{if $head_title}{$head_title}{$DT[seo_delimiter]}{/if}{if $city_sitename}{$city_sitename}{else}{$DT[sitename]}{/if}{/if}</title>
+{if $head_keywords}
+<meta name="keywords" content="{$head_keywords}"/>
+{/if}
+{if $head_description}
+<meta name="description" content="{$head_description}"/>
+{/if}
+<link rel="shortcut icon" type="image/x-icon" href="{DT_STATIC}favicon.ico"/>
+<link rel="bookmark" type="image/x-icon" href="{DT_STATIC}favicon.ico"/>
+{if $head_canonical}
+<link rel="canonical" href="{$head_canonical}"/>
+{/if}
+{if $EXT[archiver_enable]}
+<link rel="archives" title="{$DT[sitename]}" href="{$EXT[archiver_url]}"/>
+{/if}
+
+{if !DT_DEBUG}<script type="text/javascript">window.onerror=function(){return true;}</script>{/if}
+<script type="text/javascript" src="{DT_STATIC}lang/{DT_LANG}/lang.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/config.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/jquery.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/common.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/page.js"></script>
+{if $lazy}<script type="text/javascript" src="{DT_STATIC}file/script/jquery.lazyload.js"></script>{/if}
+{if $JS}
+{loop $JS $js}
+<script type="text/javascript" src="{DT_STATIC}file/script/{$js}.js"></script>
+{/loop}
+{/if}
+
+{php $searchid = ($moduleid > 3 && $MODULE[$moduleid]['ismenu'] && !$MODULE[$moduleid]['islink']) ? $moduleid : 5;}
+<link type="text/css" href="{DT_SKIN}css/reset.css" rel="stylesheet"/>
+<link type="text/css" href="{DT_SKIN}css/page.css" rel="stylesheet"/>
+<script type="text/javascript" src="{DT_SKIN}js/jquery.js"></script>
+<script type="text/javascript" src="{DT_SKIN}js/web.js"></script>
+<script type="text/javascript" src="{DT_SKIN}js/jquery.kinMaxShow-1.1.min.js"></script>
+</head><body>
+<div class="top">
+  <div class="topad content">{ad(47)}<img class="guanbi hand" src="{DT_SKIN}images/guanbi.png" alt="关闭"/> </div>
+  <div class="header content">
+    <div class="logo fl"> <a href="{$MODULE[1][linkurl]}"><img src="{if $MODULE[$moduleid][logo]}{DT_SKIN}image/logo_{$moduleid}.gif{elseif $DT[logo]}{$DT[logo]}{else}{DT_SKIN}image/logo.gif{/if}" alt="{$DT[sitename]}"/></a> </div>
+    <ul class="indexnav fl">
+      <li class="more grzxtx"><a href="{$MODULE[21][linkurl]}">汽车媒体</a>
+        <div class="qcmtnav"> {php $child = get_maincat(0,21,1);}
+          {loop $child $i $c}<a href="{$c[linkurl]}">{$c[catname]}</a>{/loop} </div>
+      </li>
+      <li><a href="{$MODULE[15][linkurl]}">行业调研</a></li>
+      <li><a href="{$MODULE[23][linkurl]}">旅游自驾</a></li>
+      <li><a href="{$MODULE[24][linkurl]}">产业孵化器</a></li>
+    </ul>
+    <div class="search fl">
+      <form action="javascript:void(0);">
+        <input class="fr hand" type="submit" value=""/>
+      </form>
+    </div>
+    <span class="fr"> <a href="javascript:void(0);">注册</a> <a href="javascript:void(0);">登录</a> <a class="tougao" href="javascript:void(0);">投稿</a> </span> </div>
+</div>
+<div class="content clearfix">
+  <div class="left mt30"> 
+    <script type="text/javascript">
+			$(function(){
+				$("#kinMaxShow").kinMaxShow({
+					height:437,
+					button:{
+						showIndex:true,
+						normal:{
+							width:'18px',height:'18px',lineHeight:'18px',
+							left:'325px',bottom:'13px',fontSize:'0px',opacity:0.8,
+							background:"url({DT_SKIN}images/dot.png) center no-repeat",border:"0px",
+							cursor:"pointer"
+						},
+						focus:{
+							background:"url({DT_SKIN}images/doton.png) center no-repeat",border:"0px"
+						}
+					} 			 
+				});
+			});
+		</script>
+    <div id="show">
+      <div id="kinMaxShow" class="fl">         
+        <!--{php $now=time(); $ads=tag("table=ad&condition=pid=48 AND fromtime <".$now." AND totime>".$now."&order=listorder asc&pagesize=5&template=null");}--> 
+        {loop $ads $v}
+        <div> <a href="{$v[image_url]}" target="_blank"><img src="{$v[image_src]}" width="770" height="437"/></a>
+          <p class="pictext"><a href="{$v[image_url]}" target="_blank">{$v[title]}</a></p>
+        </div>
+        {/loop} </div>
+    </div>
+    <ul class="xwzx_list clearfix">
+      <li> <a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威"><img src="{DT_SKIN}images/pic_45.jpg" width="227" height="129" alt="值得收藏的普华永道干货：智慧交通模式"/></a>
+        <h3><a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威">紧凑身形可容7人试驾重庆力帆SUV迈威</a></h3>
+        <p>近几年国内的SUV市场可谓异常火爆，各大车企都在此中分得了不少的甜头。随着国家对于二孩政策的放开，大家判断7座SUV这一细分车型必将成为未来...</p>
+        <i><img src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a>　　14分钟前<span>0</span><font>0</font></i> </li>
+      <li> <a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威"><img src="{DT_SKIN}images/pic_45.jpg" width="227" height="129" alt="值得收藏的普华永道干货：智慧交通模式"/></a>
+        <h3><a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威">紧凑身形可容7人试驾重庆力帆SUV迈威</a></h3>
+        <p>近几年国内的SUV市场可谓异常火爆，各大车企都在此中分得了不少的甜头。随着国家对于二孩政策的放开，大家判断7座SUV这一细分车型必将成为未来...</p>
+        <i><img src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a>　　14分钟前<span>0</span><font>0</font></i> </li>
+      <li> <a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威"><img src="{DT_SKIN}images/pic_45.jpg" width="227" height="129" alt="值得收藏的普华永道干货：智慧交通模式"/></a>
+        <h3><a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威">紧凑身形可容7人试驾重庆力帆SUV迈威</a></h3>
+        <p>近几年国内的SUV市场可谓异常火爆，各大车企都在此中分得了不少的甜头。随着国家对于二孩政策的放开，大家判断7座SUV这一细分车型必将成为未来...</p>
+        <i><img src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a>　　14分钟前<span>0</span><font>0</font></i> </li>
+    </ul>
+    <div class="title">
+      <h3 class="fl">行业动态</h3>
+      <a class="fr" href="javascript:void(0);">全部</a> </div>
+    <div class="articlefirst clearfix"> <a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威"><img src="{DT_SKIN}images/pic_57.jpg" width="501" height="284" alt="值得收藏的普华永道干货：智慧交通模式"/></a>
+      <h1><a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威">紧凑身形可容7人试驾重庆力帆SUV迈威</a></h1>
+      <p>近几年国内的SUV市场可谓异常火爆，各大车企都在此中分得了不少的...</p>
+      <i><img src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a>　　14分钟前<br/>
+      <span>0</span><font>0</font></i> </div>
+    <ul class="xwzx_list clearfix">
+      <li> <a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威"><img src="{DT_SKIN}images/pic_45.jpg" width="227" height="129" alt="值得收藏的普华永道干货：智慧交通模式"/></a>
+        <h3><a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威">紧凑身形可容7人试驾重庆力帆SUV迈威</a></h3>
+        <p>近几年国内的SUV市场可谓异常火爆，各大车企都在此中分得了不少的甜头。随着国家对于二孩政策的放开，大家判断7座SUV这一细分车型必将成为未来...</p>
+        <i><img src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a>　　14分钟前<span>0</span><font>0</font></i> </li>
+      <li> <a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威"><img src="{DT_SKIN}images/pic_45.jpg" width="227" height="129" alt="值得收藏的普华永道干货：智慧交通模式"/></a>
+        <h3><a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威">紧凑身形可容7人试驾重庆力帆SUV迈威</a></h3>
+        <p>近几年国内的SUV市场可谓异常火爆，各大车企都在此中分得了不少的甜头。随着国家对于二孩政策的放开，大家判断7座SUV这一细分车型必将成为未来...</p>
+        <i><img src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a>　　14分钟前<span>0</span><font>0</font></i> </li>
+      <li> <a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威"><img src="{DT_SKIN}images/pic_45.jpg" width="227" height="129" alt="值得收藏的普华永道干货：智慧交通模式"/></a>
+        <h3><a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威">紧凑身形可容7人试驾重庆力帆SUV迈威</a></h3>
+        <p>近几年国内的SUV市场可谓异常火爆，各大车企都在此中分得了不少的甜头。随着国家对于二孩政策的放开，大家判断7座SUV这一细分车型必将成为未来...</p>
+        <i><img src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a>　　14分钟前<span>0</span><font>0</font></i> </li>
+    </ul>
+    <div class="title">
+      <h3 class="fl">新能源</h3>
+      <a class="fr" href="javascript:void(0);">全部</a> </div>
+    <div class="articlefirst clearfix"> <a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威"><img src="{DT_SKIN}images/pic_57.jpg" width="501" height="284" alt="值得收藏的普华永道干货：智慧交通模式"/></a>
+      <h1><a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威">紧凑身形可容7人试驾重庆力帆SUV迈威</a></h1>
+      <p>近几年国内的SUV市场可谓异常火爆，各大车企都在此中分得了不少的...</p>
+      <i><img src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a>　　14分钟前<br/>
+      <span>0</span><font>0</font></i> </div>
+    <ul class="xwzx_list clearfix">
+      <li> <a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威"><img src="{DT_SKIN}images/pic_45.jpg" width="227" height="129" alt="值得收藏的普华永道干货：智慧交通模式"/></a>
+        <h3><a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威">紧凑身形可容7人试驾重庆力帆SUV迈威</a></h3>
+        <p>近几年国内的SUV市场可谓异常火爆，各大车企都在此中分得了不少的甜头。随着国家对于二孩政策的放开，大家判断7座SUV这一细分车型必将成为未来...</p>
+        <i><img src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a>　　14分钟前<span>0</span><font>0</font></i> </li>
+      <li> <a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威"><img src="{DT_SKIN}images/pic_45.jpg" width="227" height="129" alt="值得收藏的普华永道干货：智慧交通模式"/></a>
+        <h3><a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威">紧凑身形可容7人试驾重庆力帆SUV迈威</a></h3>
+        <p>近几年国内的SUV市场可谓异常火爆，各大车企都在此中分得了不少的甜头。随着国家对于二孩政策的放开，大家判断7座SUV这一细分车型必将成为未来...</p>
+        <i><img src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a>　　14分钟前<span>0</span><font>0</font></i> </li>
+      <li> <a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威"><img src="{DT_SKIN}images/pic_45.jpg" width="227" height="129" alt="值得收藏的普华永道干货：智慧交通模式"/></a>
+        <h3><a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威">紧凑身形可容7人试驾重庆力帆SUV迈威</a></h3>
+        <p>近几年国内的SUV市场可谓异常火爆，各大车企都在此中分得了不少的甜头。随着国家对于二孩政策的放开，大家判断7座SUV这一细分车型必将成为未来...</p>
+        <i><img src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a>　　14分钟前<span>0</span><font>0</font></i> </li>
+    </ul>
+    <div class="title">
+      <h3 class="fl">智能互联</h3>
+      <a class="fr" href="javascript:void(0);">全部</a> </div>
+    <div class="articlefirst clearfix"> <a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威"><img src="{DT_SKIN}images/pic_57.jpg" width="501" height="284" alt="值得收藏的普华永道干货：智慧交通模式"/></a>
+      <h1><a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威">紧凑身形可容7人试驾重庆力帆SUV迈威</a></h1>
+      <p>近几年国内的SUV市场可谓异常火爆，各大车企都在此中分得了不少的...</p>
+      <i><img src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a>　　14分钟前<br/>
+      <span>0</span><font>0</font></i> </div>
+    <ul class="xwzx_list clearfix">
+      <li> <a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威"><img src="{DT_SKIN}images/pic_45.jpg" width="227" height="129" alt="值得收藏的普华永道干货：智慧交通模式"/></a>
+        <h3><a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威">紧凑身形可容7人试驾重庆力帆SUV迈威</a></h3>
+        <p>近几年国内的SUV市场可谓异常火爆，各大车企都在此中分得了不少的甜头。随着国家对于二孩政策的放开，大家判断7座SUV这一细分车型必将成为未来...</p>
+        <i><img src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a>　　14分钟前<span>0</span><font>0</font></i> </li>
+      <li> <a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威"><img src="{DT_SKIN}images/pic_45.jpg" width="227" height="129" alt="值得收藏的普华永道干货：智慧交通模式"/></a>
+        <h3><a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威">紧凑身形可容7人试驾重庆力帆SUV迈威</a></h3>
+        <p>近几年国内的SUV市场可谓异常火爆，各大车企都在此中分得了不少的甜头。随着国家对于二孩政策的放开，大家判断7座SUV这一细分车型必将成为未来...</p>
+        <i><img src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a>　　14分钟前<span>0</span><font>0</font></i> </li>
+      <li> <a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威"><img src="{DT_SKIN}images/pic_45.jpg" width="227" height="129" alt="值得收藏的普华永道干货：智慧交通模式"/></a>
+        <h3><a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威">紧凑身形可容7人试驾重庆力帆SUV迈威</a></h3>
+        <p>近几年国内的SUV市场可谓异常火爆，各大车企都在此中分得了不少的甜头。随着国家对于二孩政策的放开，大家判断7座SUV这一细分车型必将成为未来...</p>
+        <i><img src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a>　　14分钟前<span>0</span><font>0</font></i> </li>
+    </ul>
+    <div class="title">
+      <h3 class="fl">改装车</h3>
+      <a class="fr" href="javascript:void(0);">全部</a> </div>
+    <div class="articlefirst clearfix"> <a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威"><img src="{DT_SKIN}images/pic_57.jpg" width="501" height="284" alt="值得收藏的普华永道干货：智慧交通模式"/></a>
+      <h1><a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威">紧凑身形可容7人试驾重庆力帆SUV迈威</a></h1>
+      <p>近几年国内的SUV市场可谓异常火爆，各大车企都在此中分得了不少的...</p>
+      <i><img src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a>　　14分钟前<br/>
+      <span>0</span><font>0</font></i> </div>
+    <ul class="xwzx_list clearfix">
+      <li> <a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威"><img src="{DT_SKIN}images/pic_45.jpg" width="227" height="129" alt="值得收藏的普华永道干货：智慧交通模式"/></a>
+        <h3><a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威">紧凑身形可容7人试驾重庆力帆SUV迈威</a></h3>
+        <p>近几年国内的SUV市场可谓异常火爆，各大车企都在此中分得了不少的甜头。随着国家对于二孩政策的放开，大家判断7座SUV这一细分车型必将成为未来...</p>
+        <i><img src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a>　　14分钟前<span>0</span><font>0</font></i> </li>
+      <li> <a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威"><img src="{DT_SKIN}images/pic_45.jpg" width="227" height="129" alt="值得收藏的普华永道干货：智慧交通模式"/></a>
+        <h3><a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威">紧凑身形可容7人试驾重庆力帆SUV迈威</a></h3>
+        <p>近几年国内的SUV市场可谓异常火爆，各大车企都在此中分得了不少的甜头。随着国家对于二孩政策的放开，大家判断7座SUV这一细分车型必将成为未来...</p>
+        <i><img src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a>　　14分钟前<span>0</span><font>0</font></i> </li>
+      <li> <a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威"><img src="{DT_SKIN}images/pic_45.jpg" width="227" height="129" alt="值得收藏的普华永道干货：智慧交通模式"/></a>
+        <h3><a href="javascript:void(0);" title="紧凑身形可容7人试驾重庆力帆SUV迈威">紧凑身形可容7人试驾重庆力帆SUV迈威</a></h3>
+        <p>近几年国内的SUV市场可谓异常火爆，各大车企都在此中分得了不少的甜头。随着国家对于二孩政策的放开，大家判断7座SUV这一细分车型必将成为未来...</p>
+        <i><img src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a>　　14分钟前<span>0</span><font>0</font></i> </li>
+    </ul>
+  </div>
+  <div class="right fr">
+    <div class="rdxw rightnews mt30">
+      <h3>热点新闻</h3>
+      <ul>
+        <li>
+          <h4><a href="javascript:void(0);" title="值得收藏的普华永道干货：智慧交通模式">值得收藏的普华永道干货：智慧交通模式</a></h4>
+          <i><img class="fl" src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a><span>0</span><font>0</font></i> </li>
+        <li>
+          <h4><a href="javascript:void(0);" title="值得收藏的普华永道干货：智慧交通模式">值得收藏的普华永道干货：智慧交通模式</a></h4>
+          <i><img class="fl" src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a><span>0</span><font>0</font></i> </li>
+        <li>
+          <h4><a href="javascript:void(0);" title="值得收藏的普华永道干货：智慧交通模式">值得收藏的普华永道干货：智慧交通模式</a></h4>
+          <i><img class="fl" src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a><span>0</span><font>0</font></i> </li>
+        <li>
+          <h4><a href="javascript:void(0);" title="值得收藏的普华永道干货：智慧交通模式">值得收藏的普华永道干货：智慧交通模式</a></h4>
+          <i><img class="fl" src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a><span>0</span><font>0</font></i> </li>
+      </ul>
+    </div>
+    <div class="zxdy rightnews mt30">
+      <h3>最新调研<a class="fr" href="javascript:void(0);">全部</a></h3>
+      <dl>
+        <dt class="clearfix"> <a href="javascript:void(0);"><img src="{DT_SKIN}images/pic_55.jpg" width="280" height="159" alt=""/></a>
+          <h4><a href="javascript:void(0);" title="关于汽车消费市场的调研报告">关于汽车消费市场的调研报告</a></h4>
+          <p>您的填写将给我们带来很大的帮助，本次调查所获得的数据，仅供学术参考，不为商业活动使用。谢谢您的合作...</p>
+          <i><span>0</span><font>0</font></i> </dt>
+        <dd><a class="ckxq db" href="javascript:void(0);">查看详情</a></dd>
+      </dl>
+    </div>
+    <div class="cyfhq rightnews mt30">
+      <h3>产业孵化器<a class="fr" href="javascript:void(0);">全部</a></h3>
+      <ul>
+        <li class="clearfix"> <a class="fl" href="javascript:void(0);"><img src="{DT_SKIN}images/pic_68.jpg" width="121" height="69" alt=""/></a>
+          <h4><a href="javascript:void(0);" title="创建一个方便人们打车的项目">创建一个方便人们打车的项目</a></h4>
+          <i><img class="fl" src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a><span>0</span><font>0</font></i> </li>
+        <li class="clearfix"> <a class="fl" href="javascript:void(0);"><img src="{DT_SKIN}images/pic_68.jpg" width="121" height="69" alt=""/></a>
+          <h4><a href="javascript:void(0);" title="创建一个方便人们打车的项目">创建一个方便人们打车的项目</a></h4>
+          <i><img class="fl" src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a><span>0</span><font>0</font></i> </li>
+        <li class="clearfix"> <a class="fl" href="javascript:void(0);"><img src="{DT_SKIN}images/pic_68.jpg" width="121" height="69" alt=""/></a>
+          <h4><a href="javascript:void(0);" title="创建一个方便人们打车的项目">创建一个方便人们打车的项目</a></h4>
+          <i><img class="fl" src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a><span>0</span><font>0</font></i> </li>
+        <li class="clearfix"> <a class="fl" href="javascript:void(0);"><img src="{DT_SKIN}images/pic_68.jpg" width="121" height="69" alt=""/></a>
+          <h4><a href="javascript:void(0);" title="创建一个方便人们打车的项目">创建一个方便人们打车的项目</a></h4>
+          <i><img class="fl" src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a><span>0</span><font>0</font></i> </li>
+        <li class="clearfix"> <a class="fl" href="javascript:void(0);"><img src="{DT_SKIN}images/pic_68.jpg" width="121" height="69" alt=""/></a>
+          <h4><a href="javascript:void(0);" title="创建一个方便人们打车的项目">创建一个方便人们打车的项目</a></h4>
+          <i><img class="fl" src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a><span>0</span><font>0</font></i> </li>
+      </ul>
+      <a class="ckgd db" href="javascript:void(0);">查看更多</a> </div>
+    <div class="lyzj rightnews mt30">
+      <h3>旅游自驾<a class="fr" href="javascript:void(0);">全部</a></h3>
+      <ul>
+        <li class="clearfix"> <a href="javascript:void(0);"><img src="{DT_SKIN}images/pic_117.jpg" width="280" height="159" alt=""/></a>
+          <h4><a href="javascript:void(0);" title="组织到30个人到三亚旅游">组织到30个人到三亚旅游</a></h4>
+          <i><img class="fl" src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a><span>0</span><font>0</font></i> </li>
+        <li class="clearfix"> <a href="javascript:void(0);"><img src="{DT_SKIN}images/pic_117.jpg" width="280" height="159" alt=""/></a>
+          <h4><a href="javascript:void(0);" title="组织到30个人到三亚旅游">组织到30个人到三亚旅游</a></h4>
+          <i><img class="fl" src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a><span>0</span><font>0</font></i> </li>
+        <li class="clearfix"> <a href="javascript:void(0);"><img src="{DT_SKIN}images/pic_117.jpg" width="280" height="159" alt=""/></a>
+          <h4><a href="javascript:void(0);" title="组织到30个人到三亚旅游">组织到30个人到三亚旅游</a></h4>
+          <i><img class="fl" src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a><span>0</span><font>0</font></i> </li>
+        <li class="clearfix"> <a href="javascript:void(0);"><img src="{DT_SKIN}images/pic_117.jpg" width="280" height="159" alt=""/></a>
+          <h4><a href="javascript:void(0);" title="组织到30个人到三亚旅游">组织到30个人到三亚旅游</a></h4>
+          <i><img class="fl" src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a><span>0</span><font>0</font></i> </li>
+        <li class="clearfix"> <a href="javascript:void(0);"><img src="{DT_SKIN}images/pic_117.jpg" width="280" height="159" alt=""/></a>
+          <h4><a href="javascript:void(0);" title="组织到30个人到三亚旅游">组织到30个人到三亚旅游</a></h4>
+          <i><img class="fl" src="{DT_SKIN}images/tx_25.jpg" width="26" height="26" />　<a href="javascript:void(0);">琼媒体</a><span>0</span><font>0</font></i> </li>
+      </ul>
+      <a class="ckgd db" href="javascript:void(0);">查看更多</a> </div>
+  </div>
+</div>
+<div class="partner clearfix">
+  <h2>合作伙伴</h2>
+  <ul>
+    <li><a href="javascript:void(0);">万车网</a></li>
+    <li><a href="javascript:void(0);">新车评网</a></li>
+    <li><a href="javascript:void(0);">盖车汽车资讯</a></li>
+    <li><a href="javascript:void(0);">电动汽车</a></li>
+    <li><a href="javascript:void(0);">中华网汽车</a></li>
+    <li><a href="javascript:void(0);">万车网</a></li>
+    <li><a href="javascript:void(0);">新车评网</a></li>
+    <li><a href="javascript:void(0);">盖车汽车资讯</a></li>
+    <li><a href="javascript:void(0);">电动汽车</a></li>
+    <li><a href="javascript:void(0);">中华网汽车</a></li>
+    <li><a href="javascript:void(0);">万车网</a></li>
+    <li><a href="javascript:void(0);">新车评网</a></li>
+    <li><a href="javascript:void(0);">盖车汽车资讯</a></li>
+    <li><a href="javascript:void(0);">电动汽车</a></li>
+    <li><a href="javascript:void(0);">中华网汽车</a></li>
+    <li><a href="javascript:void(0);">万车网</a></li>
+    <li><a href="javascript:void(0);">新车评网</a></li>
+    <li><a href="javascript:void(0);">盖车汽车资讯</a></li>
+    <li><a href="javascript:void(0);">电动汽车</a></li>
+    <li><a href="javascript:void(0);">中华网汽车</a></li>
+    <li><a href="javascript:void(0);">万车网</a></li>
+    <li><a href="javascript:void(0);">新车评网</a></li>
+  </ul>
+  <ul class="partnerall" style="display:none;">
+    <li><a href="javascript:void(0);">万车网</a></li>
+    <li><a href="javascript:void(0);">新车评网</a></li>
+    <li><a href="javascript:void(0);">盖车汽车资讯</a></li>
+    <li><a href="javascript:void(0);">电动汽车</a></li>
+    <li><a href="javascript:void(0);">中华网汽车</a></li>
+    <li><a href="javascript:void(0);">万车网</a></li>
+    <li><a href="javascript:void(0);">新车评网</a></li>
+    <li><a href="javascript:void(0);">盖车汽车资讯</a></li>
+    <li><a href="javascript:void(0);">电动汽车</a></li>
+    <li><a href="javascript:void(0);">中华网汽车</a></li>
+    <li><a href="javascript:void(0);">万车网</a></li>
+    <li><a href="javascript:void(0);">新车评网</a></li>
+    <li><a href="javascript:void(0);">盖车汽车资讯</a></li>
+    <li><a href="javascript:void(0);">电动汽车</a></li>
+    <li><a href="javascript:void(0);">中华网汽车</a></li>
+  </ul>
+  <a class="pamore" href="javascript:void(0);">
+  <image title="显示全部" src="{DT_SKIN}images/parmore.png"/>
+  </a> 
+  <script>
+		$('.pamore').click(function(){
+			$(".partnerall").show();
+		});
+	</script> 
+</div>
+<div class="bottom clearfix">
+  <div class="content">
+    <ul>
+      <li><a href="javascript:void(0);">关于我们</a></li>
+      <li><a href="javascript:void(0);">加入我们</a></li>
+      <li><a href="javascript:void(0);">合作伙伴</a></li>
+      <li><a href="javascript:void(0);">广告及服务</a></li>
+      <li><a href="javascript:void(0);">常见问题解答</a></li>
+      <li><a href="javascript:void(0);">联系我们</a></li>
+    </ul>
+    <p>Copyright2016-2020© 版权所属：中国汽车纵横有限公司    京ICP备 06038956</p>
+    <div class="share fr"> <a href="javascript:void(0);" data-tag="share_1" data-cmd="tsina" class="sharewb bbds_tsina bdsharebuttonbox"> </a> <a href="javascript:void(0);" data-cmd="weixin" class="sharewx"> </a> <a href="javascript:void(0);" data-tag="share_1" data-cmd="more" class="sharemore bds_more bdsharebuttonbox"> </a>
+      <div class="wbshow"> <img src="{DT_SKIN}images/ewm_wx.jpg" width="98" height="98" alt="扫描关注微信"> <i>扫一扫关注微信</i> </div>
+    </div>
+  </div>
+  <script>
+		$('.sharewx').mouseover(function(){
+			$(".wbshow").show();		});
+		$('.sharewx').mouseout(function(){
+			$(".wbshow").hide();		});
+	</script> 
+</div>
+<script type="text/javascript" src="js/loadmore.js"></script> 
+<script>
+	window._bd_share_config = {
+	share : [{
+			"tag" : "share_1",
+		}]
+	}
+	with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+</body>
+</html>

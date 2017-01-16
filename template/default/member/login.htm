@@ -1,0 +1,65 @@
+{template 'header-reg'}
+<!--头部2 结束-->
+<div class="reg_m">
+	<div class="m">
+		<div class="login_box">
+			<div class="login_box_form">
+				<form method="post" action="{$DT[file_login]}" onsubmit="return Dcheck();">
+				<input name="forward" type="hidden" value="{$forward}"/>
+				<input name="auth" type="hidden" value="{$auth}"/>
+					<ul>
+						<li>
+							<label>用3户名</label>
+							<p style="display:none;"><select name="option">
+								<option value="username" selected>用户名</option>
+							</select></p>
+  							<input name="username" type="text" id="username" value="{$username}" placeholder="请输入您的用户名">
+  							<span class="uuser"></span>
+						</li>
+						<li>
+							<label>密码</label>
+  							<input type="password" name="password" id="password" {if isset($password)} value="{$password}"{/if} placeholder="请输入密码">
+  							<span class="unlock"></span>
+						</li>
+						{if $MOD[captcha_login]}
+						<li>
+						<label>验证码：</label>
+						{template 'captcha', 'chip'}
+						</li>
+						{/if}
+						<li class="checkboxs clearfix">
+							<div class="fl">
+								<input type="checkbox" name="cookietime" value="1" id="cookietime" checked><label>记住用户名</label>
+							</div>
+							<div class="rembero fl">
+								<a href="send.php">忘记密码？</a><i>|</i><a href="{$MODULE[2][linkurl]}{$DT[file_register]}">免费注册</a>
+							</div>
+						</li>
+						<li><input type="submit" name="submit" value="登 录"></li>
+					</ul>
+				</form>
+			</div>
+			{if $oa}
+			<div class="other_lg">
+				<div class="other_lg_t">
+					<h4>使用合作账号登录</h4>
+				</div>
+				<ul class="other_lg_box clearfix">
+					{loop $OAUTH $k $v}
+					{if $v[enable]}
+						<li><a href="{DT_PATH}api/oauth/{$k}/connect.php" title="{$v[name]}">
+							<img src="{DT_PATH}api/oauth/{$k}/ico.png" class="fimg"/>
+							<img src="{DT_PATH}api/oauth/{$k}/ico_hover.png" alt="" class="limg"/>
+						</a></li>
+					{/if}
+					{/loop}
+				</ul>
+			</div>
+			{/if}
+		</div>
+	</div>
+</div>
+<!--底部2 开始-->
+{template 'footer-reg'}
+</body>
+</html>
